@@ -25,15 +25,19 @@
 <body>
     <div id="container"></div>
     <script type="text/babel">
-        class HelloWorld extends React.Component {
+        class Buttonify extends React.Component {
 
             render() {
-                return <p>Hello {this.props.greetTarget}!</p>
+                return (
+                    <div>
+                        <button type={this.props.behavior}>{this.props.children}</button>
+                    </div>
+                );
             }
         }
 
         ReactDOM.render(
-        <HelloWorld greetTarget="Batman"/>,
+        <Buttonify behavior="submit">SEND DATA</Buttonify>,
         document.querySelector("#container")
         );
     </script>
